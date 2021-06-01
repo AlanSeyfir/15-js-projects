@@ -13,6 +13,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.hero {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-top: 1em;
@@ -110,5 +115,27 @@ body {
   padding: 2em;
   background-color: #3d118f;
   color: whitesmoke;
+}
+
+@media (min-width: 770px) {
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=style.css.map */
