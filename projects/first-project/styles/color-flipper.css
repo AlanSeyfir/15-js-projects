@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.nav {
+  margin: 0 auto;
+  padding: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 600px;
+  width: 50%;
+}
+
+.nav .nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  max-width: 900px;
+}
+
+.nav .nav__list .nav__item {
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav .nav__list .nav__item button {
+  padding: 0 .5em 0 .5em;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.nav .nav__list .nav__item button a {
+  text-decoration: none;
+  color: none;
+}
+
+.nav .nav__list .nav__item button a:hover {
+  color: #7134d3;
+}
+
+.background__flipper {
+  height: 100vh;
+  background-color: #7134d3;
+}
+
+.background__flipper .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.background__flipper .container h1 {
+  background-color: black;
+  color: white;
+  max-width: 50%;
+  padding: 1em;
+  margin: 25% auto 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  border: 1px dashed #c9c9c9;
+  border-radius: 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.background__flipper .container h1:hover {
+  opacity: 0.80;
+}
+
+.background__flipper .container span {
+  color: #29c3f1;
+}
+
+.background__flipper .container .change__color {
+  margin: 1em auto;
+  font-size: 1.5rem;
+  color: black;
+  background: transparent;
+  border: 3px solid black;
+  padding: .5em;
+  width: 20%;
+  border-radius: 10px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.background__flipper .container .change__color:hover {
+  color: white;
+  background-color: black;
+}
+
+@media (max-width: 500px) {
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav h2 {
+    margin-bottom: .5em;
+  }
+  .background__flipper .container h1 {
+    max-width: 100%;
+  }
+  .background__flipper .container .change__color {
+    width: 30%;
+  }
+}
+/*# sourceMappingURL=color-flipper.css.map */
