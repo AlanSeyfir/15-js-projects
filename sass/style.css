@@ -54,7 +54,7 @@ body {
 }
 
 .container__btn .btn:hover {
-  border-radius: 0 10px 0 10px;
+  border-radius: 0 10px 0 11px;
 }
 
 .card {
