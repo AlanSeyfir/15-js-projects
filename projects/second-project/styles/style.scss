@@ -1,0 +1,53 @@
+*{ padding: 0; margin: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+
+.counter{
+    /*I don't know min-height: 100vh. isn't the same*/
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,5,81,1) 52%, rgba(8,31,136,1) 100%, rgba(25,13,78,1) 100%);
+
+    .prueba{
+        color: chartreuse;
+    }
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+    .container{
+        text-align: center;
+        font-size: 3rem;
+        width: 10em;
+        .title{
+            color: white;
+        }
+
+        .number{
+            margin: .4em 0;
+            color: white;
+        }
+
+        .wrapper__btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .btn{
+                background: transparent;
+                padding: .7em;
+                cursor: pointer;
+                color: white;
+                border: 1px dotted white;
+                font-size: 1.5rem;
+                transition: .7s;
+                &:hover{
+                    background: white;
+                    color: black;
+                }
+
+                &:active{
+                    transition: 0s;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
