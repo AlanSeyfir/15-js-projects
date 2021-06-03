@@ -5,34 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hex</title>
-    <link rel="stylesheet" href="styles/color-flipper.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <nav class="nav">
-        
-        <!-- <ul class="nav__list">
-            <li class="nav__item">Color Flipper</li>
-        </ul> -->
-            <h2>Color Flipper 🖌 </h2>
-        
-        <ul class="nav__list">
-            
-            <li class="nav__item">
-                <button class="btn" id="normalColor"><a href="color-flipper.html">Simple</a></button>
-            </li>
-            <li class="nav__item">
-                <button class="btn" id="normalColor"><a href="hex.html"><b>Hex</b></a></button>
-            </li>
-        </ul>
-    </nav>
-
     <main class="background__flipper" id="background">
         <section class="container">
-            <!-- *Change to green, Rgba(133,122,200) and hex color -->
-            <h1 class="background__color">Background Color : <span id="color"> #7134d3</span></h1>
-            <button class="change__color" id="changeColor">
-                Click me
-            </button>
+            
+            <div class="card">
+                <h1 class="title">Our Reviews</h1>
+                <div class="wrapper">
+                    <!--If doesn't appear in github pages copy the img-->
+                    <div class="circular__landscape">
+                        <img class="photo" src="/img/bgGenshin.jpg" alt="person photo">
+                    </div>
+                    <h2 class="name">Susan Smith</h2>
+                    <h3 class="job">Web developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laudantium doloribus a numquam aliquid voluptates provident dicta officia.
+                    </p>
+                    <!-- *Add icons. Do I need to add capitalize in classes?-->
+                    <div class="wrapper__btn">
+                        <button class="change__review__btn"><</button>
+                        <button class="change__review__btn">></button>
+                    </div>
+                    <button class="surprise__btn">
+                        Surprise Me
+                    </button>
+                </div>
+            </div>
+            
         </section>
     </main>
 
