@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -5,23 +6,39 @@
           box-sizing: border-box;
 }
 
+body {
+  background: #F1F5F8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 img {
   max-width: 100%;
 }
 
-button {
-  cursor: pointer;
-}
-
-/* // Explicar a mi bb que el nesting es kk */
+/* // Explicar a mi bb que el nesting es kk 
+    Decirle a mi bb la publicacion de freddy que se usa sans serif
+*/
 .card {
-  width: 50%;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 2em auto;
   text-align: center;
+  background: white;
+  padding: 1.5em 2.5em;
+  border-radius: 10px;
 }
 
 .card h1 {
   margin: 1em 0;
+}
+
+.card h1::before {
+  content: '';
+  width: 20%;
+  height: 5px;
+  position: absolute;
+  top: 110px;
+  left: 40%;
+  background: purple;
 }
 
 .card .wrapper {
@@ -39,24 +56,103 @@ button {
   margin-top: 1em;
 }
 
+.card .wrapper .job {
+  margin-top: .2em;
+  margin-bottom: .5em;
+  color: #af2cc0;
+}
+
 .card .wrapper .surprise__btn {
   width: 50%;
+  font-size: 1rem;
+  padding: .7em;
   margin: 1em auto;
+  background: purple;
+  border-radius: 5px;
+  color: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.card .wrapper .surprise__btn:hover {
+  background: #b40db4;
+}
+
+.card button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  width: 10%;
+}
+
+.shadow {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  top: 40%;
+  left: 40%;
+  background: #da5fb5;
 }
 
 .circular__landscape {
-  display: inline-block;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
   margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.circular__landscape::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -.2em;
+  left: .9em;
+  background: #da5fb5;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .circular__landscape img {
-  width: auto;
-  height: 100%;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.circular__landscape::after {
+  content: '💬';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.3rem;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 0px;
+  left: 5px;
+  background: #da5fb5;
+  border-radius: 50%;
+  z-index: 7;
+}
+
+.quotes {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 40%;
+  left: 40%;
+  background: #da5fb5;
 }
 
 .wrapper__btn {
@@ -77,10 +173,17 @@ button {
 }
 
 .wrapper__btn .change__review__btn {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .wrapper__btn .change__review__btn:first-child {
   margin-right: 1em;
+}
+
+.wrapper__btn .change__review__btn:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
 }
 /*# sourceMappingURL=style.css.map */
