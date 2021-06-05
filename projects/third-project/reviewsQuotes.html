@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hex</title>
+    <title>Reviews & Quotes</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -14,24 +14,20 @@
             <div class="card">
                 <h1 class="title">Our Reviews</h1>
                 <div class="wrapper">
-                    <!--If doesn't appear in github pages copy the img-->
                     
                     <div class="circular__landscape">
-                        <!-- <div class="shadow"></div> -->
-                        <img class="photo" src="img/person-1.jpg" alt="person photo">
-                        <!-- <div class="quotes"></div> -->
+                        <img class="photo" id="personPhoto" src="img/person-1.jpg" alt="person photo">
                     </div>
                     
-                    <h2 class="name">Susan Smith</h2>
-                    <h3 class="job">Web developer</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laudantium doloribus a numquam aliquid voluptates provident dicta officia.
+                    <h2 class="name" id="personName">Susan Smith</h2>
+                    <h3 class="job" id="personJob">Web developer</h3>
+                    <p id="personSummary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laudantium doloribus a numquam aliquid voluptates provident dicta officia.
                     </p>
-                    <!-- *Add icons. Do I need to add capitalize in classes?-->
                     <div class="wrapper__btn">
-                        <button class="change__review__btn"><</button>
-                        <button class="change__review__btn">></button>
+                        <button class="change__review__btn" id="previousBtn"><</button>
+                        <button class="change__review__btn" id="nextBtn">></button>
                     </div>
-                    <button class="surprise__btn">
+                    <button class="surprise__btn" id="randomBtn">
                         Surprise Me
                     </button>
                 </div>
