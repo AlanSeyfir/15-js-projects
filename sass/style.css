@@ -12,4 +12,130 @@ img {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-top: 1em;
+  margin-left: .2em;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin: 2em 0 2em .5em;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #e9e9e9;
+}
+
+.container__btn .btn {
+  font-size: 1.3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rebeccapurple;
+  border-radius: 10px 0 10px 0;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 0 0 2em .5em;
+}
+
+.container__btn .btn a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.container__btn .btn:hover {
+  border-radius: 0 10px 0 11px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card img {
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card img:hover {
+  -webkit-box-shadow: 2px 11px 35px 0px rgba(0, 0, 0, 0.34);
+          box-shadow: 2px 11px 35px 0px rgba(0, 0, 0, 0.34);
+}
+
+.card img:first-of-type {
+  margin-top: 2em;
+}
+
+.card p {
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  padding: 1em;
+  color: white;
+  background-color: #481872;
+  position: relative;
+  top: -15px;
+  bottom: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+
+.card p:hover {
+  -webkit-box-shadow: 1px 10px 35px 0px rgba(0, 0, 0, 0.34);
+          box-shadow: 1px 10px 35px 0px rgba(0, 0, 0, 0.34);
+}
+
+.card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #3d118f;
+  color: whitesmoke;
+}
+
+@media (min-width: 770px) {
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 /*# sourceMappingURL=style.css.map */
