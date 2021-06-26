@@ -51,15 +51,45 @@ const reviews =[
 let currentItem = 0;
 
 window.addEventListener('DOMContentLoaded', function(){
-    //Get the reviews in an array
-
-    const reviewItem = reviews[currentItem];
-    photo.src = reviewItem.image;
-
-    console.log(reviewItem);
-    //Obtain the info, so we can change the currentItem value and change the info
+    //Call the function and add a value
+    obtainReview(currentItem);
 });
 
+//Make a function with a parameter
+function obtainReview(person){
+    //Get the reviews in an array
+    const reviewItem = reviews[person];
+    photo.src = reviewItem.image;
+    name.textContent = reviewItem.name;
+    job.textContent = reviewItem.job;
+    summary.textContent = reviewItem.description;
+}
+
+//show next person
+nextReview.addEventListener('click', function(){
+    currentItem++;
+    // Minus 1, with this reflects the actual last item in the array
+    if (currentItem >= reviews.length - 1) {
+        currentItem = 0;
+    }
+    obtainReview(currentItem);
+});
+
+previousReview.addEventListener('click', function(){
+    currentItem--;
+    if (currentItem < 0) {
+        currentItem = reviews.length - 1; 
+    }
+    obtainReview(currentItem);
+});
+
+randomReview.addEventListener('click', function(){
+    currentItem = Math.floor(Math.random() * reviews.length);
+    console.log(currentItem);
+    obtainReview(currentItem);
+});
+
+//show previous person
 
 // nextReview.addEventListener('click', function(){
 //     currentItem++;
