@@ -16,7 +16,7 @@ const reviews =[
         name: 'Alan Garcia',
         job: 'Frontend Developer',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laudantium doloribus a numquam aliquid voluptates provident dicta officia.',
-        image: 'https://media-exp1.licdn.com/dms/image/C4E03AQHPBjrVHa19kg/profile-displayphoto-shrink_800_800/0/1619937771833?e=1628121600&v=beta&t=SMPqO_yUttJ5lwj-GP21HbNFoJhptu82y9reCVB6Vh8'
+        image: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 2,
@@ -49,17 +49,24 @@ const reviews =[
 ]
 
 let currentItem = 0;
-// console.log(reviews[0]);
 
+window.addEventListener('DOMContentLoaded', function(){
+    //Get the reviews in an array
 
-nextReview.addEventListener('click', function(){
-    // console.log(reviews[currentItem]);
-    currentItem++;
-    if (currentItem >= reviews.length) {
-        currentItem  = 0;
-    }
+    const reviewItem = reviews[currentItem];
+    photo.src = reviewItem.image;
 
+    console.log(reviewItem);
+    //Obtain the info, so we can change the currentItem value and change the info
 });
+
+
+// nextReview.addEventListener('click', function(){
+//     currentItem++;
+//     if (currentItem >= reviews.length) {
+//         currentItem  = 0;
+//     }
+// });
 
 
 
