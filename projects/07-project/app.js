@@ -87,29 +87,12 @@ const menu = [
 ];
 //Select the parent and the filter button
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const container = document.querySelector('.btn-container');
 
 //Load items
 window.addEventListener('DOMContentLoaded', () =>{
   displayMenuItems(menu);//see all the properties of the menu
-});
-//Filter items(all the menu)
-filterBtns.forEach((btn) =>{
-  btn.addEventListener('click', (e) =>{
-    const category = e.currentTarget.dataset.category;//How I named it in HTML
-    const menuCategory = menu.filter((menuItem) =>{
-      if (menuItem.category === category) {
-        return menuItem;
-      }
-    });
-
-    if (category === 'all') {
-      displayMenuItems(menu);
-    }else{
-      displayMenuItems(menuCategory);
-    }
-
-  });
+  displayMenuButtons();
 });
 
 function displayMenuItems(menuItems){
@@ -131,4 +114,41 @@ function displayMenuItems(menuItems){
   //console.log(displayMenu);
   displayMenu = displayMenu.join('');//Is let so that's why we can override it
   sectionCenter.innerHTML = displayMenu;
+}
+
+function displayMenuButtons(){
+  //This could be simplify with ES6 
+  const categories = menu.reduce((values, item) =>{
+    if (!values.includes(item.category)) {
+      values.push(item.category);
+    }
+    return values;
+  }, ['all']);
+
+  const categoryBtns = categories.map((category) =>{
+    return `<button class="filter-btn" type="button" data-category="${category}">
+              ${category}
+            </button>`;
+  }).join('');
+  container.innerHTML = categoryBtns;
+
+  //We can also use in THIS case container.query~~. Not only the use of document
+  const filterBtns = document.querySelectorAll('.filter-btn');//Now we can access
+  //Filter items(all the menu)
+  filterBtns.forEach((btn) =>{
+    btn.addEventListener('click', (e) =>{
+      const category = e.currentTarget.dataset.category;//How I named it in HTML
+      const menuCategory = menu.filter((menuItem) =>{
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+
+      if (category === 'all') {
+        displayMenuItems(menu);
+      }else{
+        displayMenuItems(menuCategory);
+      }
+    });
+  });
 }

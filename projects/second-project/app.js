@@ -4,9 +4,6 @@ const incrementBtn = document.getElementById('increment');
 const numberCounter = document.getElementById('number');
 
 let counterNumber = 0;
-
-
-
 decrementBtn.addEventListener('click', function(){
     counterNumber--;
     numberCounter.innerText = counterNumber;
@@ -15,7 +12,6 @@ decrementBtn.addEventListener('click', function(){
     }else if(numberCounter.innerText === '0') {
         numberCounter.style.color = 'white'
     }
-    
 });
 
 resetBtn.addEventListener('click', function(){
@@ -24,7 +20,6 @@ resetBtn.addEventListener('click', function(){
     if (numberCounter.innerText === '0') {
         numberCounter.style.color = 'white'
     }
-    
 });
 
 incrementBtn.addEventListener('click', function(){
