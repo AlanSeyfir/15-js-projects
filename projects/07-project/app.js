@@ -44,7 +44,7 @@ const menu = [
       id: 6,
       title: "oreo dream",
       category: "shakes",
-      price: 18.99,
+      price: 4.99,
       img: "./images/item-6.jpeg",
       desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
     },
@@ -73,6 +73,38 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
-//Select the parent
+//Select the parent and the filter button
 const sectionCenter = document.querySelector('.section-center');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
+//Load items
+window.addEventListener('DOMContentLoaded', () =>{
+  displayMenuItems(menu);//see all the properties of the menu
+});
+//Filter items
+filterBtns.forEach((btn) =>{
+  btn.addEventListener('click', (e) =>{
+    console.log(e.currentTarget.dataset);
+  });
+});
+
+function displayMenuItems(menuItems){
+  let displayMenu = menuItems.map(function(item){
+    //console.log(item);
+    return `<article class="menu-item">
+              <img src="${item.img}" class="photo" alt="${item.title}">
+              <div class="item-info">
+                <header>
+                  <h4>${item.title}</h4>
+                  <h4 class="price">$${item.price}</h4>
+                </header>
+                <p class="item-text">
+                  ${item.desc}
+                </p>
+              </div>
+            </article>`;
+  });
+  //console.log(displayMenu);
+  displayMenu = displayMenu.join('');//Is let so that's why we can override it
+  sectionCenter.innerHTML = displayMenu;
+}
