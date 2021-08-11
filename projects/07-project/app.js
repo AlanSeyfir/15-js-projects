@@ -1,3 +1,7 @@
+//get only unique categories - HARDEST ONE LMAO
+//iterate over categories return buttons
+//make sure to select buttons when they are available
+
 //items
 const menu = [
     {
@@ -72,7 +76,15 @@ const menu = [
       img: "./images/item-9.jpeg",
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
-  ];
+    {
+      id: 10,
+      title: "Steak",
+      category: "dinner",
+      price: 29.99,
+      img: "./images/item-10.jpeg",
+      desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    }
+];
 //Select the parent and the filter button
 const sectionCenter = document.querySelector('.section-center');
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -81,10 +93,22 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 window.addEventListener('DOMContentLoaded', () =>{
   displayMenuItems(menu);//see all the properties of the menu
 });
-//Filter items
+//Filter items(all the menu)
 filterBtns.forEach((btn) =>{
   btn.addEventListener('click', (e) =>{
-    console.log(e.currentTarget.dataset);
+    const category = e.currentTarget.dataset.category;//How I named it in HTML
+    const menuCategory = menu.filter((menuItem) =>{
+      if (menuItem.category === category) {
+        return menuItem;
+      }
+    });
+
+    if (category === 'all') {
+      displayMenuItems(menu);
+    }else{
+      displayMenuItems(menuCategory);
+    }
+
   });
 });
 
